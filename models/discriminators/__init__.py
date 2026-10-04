@@ -1,0 +1,1 @@
+from models.discriminators.discriminator_dino import DinoDisc as DinoDiscriminator

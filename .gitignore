@@ -1,0 +1,49 @@
+# Weights, data, statistics
+checkpoints/
+reference_stats/
+models/cache/
+pools/
+data/imagenet/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npz
+*.npy
+*.pb
+*.bin
+*.tar
+*.zip
+
+# Run outputs
+logs/
+out/
+output/
+outputs/
+results/
+saver/
+yaml/
+wandb/
+*.log
+*.csv
+
+# Local validation
+tests/
+
+# Environment
+.cache/
+.ruff_cache/
+.venv/
+.python-version
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
