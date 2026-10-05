@@ -21,6 +21,7 @@ if (copyButton && bibtexCode) {
     }
 
     copyButton.textContent = copied ? 'Copied!' : 'Copy failed';
+    document.getElementById('copy-status').textContent = copied ? 'BibTeX copied to clipboard.' : 'Copy failed. Select the BibTeX text to copy it manually.';
     window.setTimeout(() => { copyButton.textContent = 'Copy BibTeX'; }, 1800);
   });
 }
