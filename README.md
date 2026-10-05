@@ -1,6 +1,32 @@
-# Frechet-Distributional-Decoder-Alignment
+<div align="center">
 
-This repo contains the decoder weights and the PyTorch training and evaluation code of FDDA.
+# Efficient Fréchet Distributional Decoder Alignment
+
+### for Latent Generative Models
+
+[![arXiv](https://img.shields.io/badge/arXiv-Preprint-b31b1b.svg)](docs/assets/FDDA.pdf)
+[![Project Page](https://img.shields.io/badge/Project-Page-3b6ea8.svg)](https://sunset-clouds.github.io/Frechet-Distributional-Decoder-Alignment/)
+[![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](https://sunset-clouds.github.io/Frechet-Distributional-Decoder-Alignment/assets/FDDA.pdf)
+[![Hugging Face](https://img.shields.io/badge/🤗_Hugging_Face-Models-ffd21e.svg)](https://huggingface.co/jiajunzhu/Frechet-Distributional-Decoder-Alignment)
+
+**[Xianghong Fang](https://sunset-clouds.github.io/)<sup>1,*</sup> · Jiajun Zhu<sup>2,*</sup> · Esma Aimeur<sup>2</sup> · Dehan Kong<sup>1</sup> · Tim G. J. Rudner<sup>1,3</sup>**
+
+<sup>1</sup>University of Toronto &nbsp;&nbsp; <sup>2</sup>Université de Montréal &nbsp;&nbsp; <sup>3</sup>Vijil &nbsp;&nbsp; <sup>*</sup>Equal contribution
+
+</div>
+
+> **TL;DR:** FDDA freezes the latent generator and aligns the decoder on generation-time latents with a Fréchet distributional objective. Across 11 models, one epoch reduces gFDr<sup>6</sup> by 34.0–59.6% from original checkpoints and by a further 10.2–57.2% after generator-side FD post-training, at 3.6–328.7× lower total training cost.
+
+<p align="center">
+  <a href="docs/assets/generator_side.pdf"><img src="docs/assets/generator_side.png" width="48%" alt="Generator-side FD post-training updates the generator with the decoder frozen"></a>
+  <a href="docs/assets/decoder_side.pdf"><img src="docs/assets/decoder_side.png" width="48%" alt="FDDA freezes the generator and updates the decoder on generation-time latents"></a>
+  <br>
+  <big><big>Generator-side FD post-training (left) and decoder-side FDDA (right).</big></big>
+</p>
+
+## Overview
+
+This repository contains the decoder weights and the PyTorch training and evaluation code of FDDA.
 FDDA post-trains the tokenizer decoder of a latent generative model with a Fréchet distance (FD)
 loss on generated samples, measured in pretrained representation spaces (SigLIP2, MAE,
 Inception-v3). The generator, the tokenizer encoder and the quantizer stay frozen.
@@ -156,7 +182,19 @@ scripts run on several GPUs with `torchrun --nproc_per_node=<N>`; `--global_batc
 batch over all GPUs. The decoder is evaluated at the end of every epoch and saved to
 `outputs/checkpoints/`. Run `python main.py --help` for the other options.
 
-## BibTeX
+## Citation
+
+If this work is useful for your research, please cite:
 
 ```bibtex
+@article{fang2026efficient,
+  title   = {Efficient Fréchet Distributional Decoder Alignment for Latent Generative Models},
+  author  = {Fang, Xianghong and Zhu, Jiajun and Aimeur, Esma and Kong, Dehan and Rudner, Tim G. J.},
+  journal = {arXiv},
+  year    = {2026}
+}
 ```
+
+## Acknowledgements
+
+FDDA builds on [FD-Loss](https://github.com/Jiawei-Yang/FD-Loss) and the pretrained tokenizers and generators of LlamaGen, GigaTok, TiTok, VAR, and iMF. We thank the authors of these models, the generator-side FD post-training methods FDAR and FD-SIM, and the representation and evaluation libraries used in this repository.
