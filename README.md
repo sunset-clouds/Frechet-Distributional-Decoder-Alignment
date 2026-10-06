@@ -9,9 +9,9 @@
 [![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](https://sunset-clouds.github.io/Frechet-Distributional-Decoder-Alignment/assets/FDDA.pdf)
 [![Hugging Face](https://img.shields.io/badge/🤗_Hugging_Face-Models-ffd21e.svg)](https://huggingface.co/jiajunzhu/Frechet-Distributional-Decoder-Alignment)
 
-**[Xianghong Fang](https://sunset-clouds.github.io/)<sup>1,*</sup> · Jiajun Zhu<sup>2,*</sup> · Esma Aimeur<sup>2</sup> · Dehan Kong<sup>1</sup> · Tim G. J. Rudner<sup>1,3</sup>**
+**[Xianghong Fang](https://sunset-clouds.github.io/)<sup>1,&#42;</sup> · Jiajun Zhu<sup>2,&#42;</sup> · Esma Aimeur<sup>2</sup> · Dehan Kong<sup>1</sup> · Tim G. J. Rudner<sup>1,3</sup>**
 
-<sup>1</sup>University of Toronto &nbsp;&nbsp; <sup>2</sup>Université de Montréal &nbsp;&nbsp; <sup>3</sup>Vijil &nbsp;&nbsp; <sup>*</sup>Equal contribution
+<sup>1</sup>University of Toronto &nbsp;&nbsp; <sup>2</sup>Université de Montréal &nbsp;&nbsp; <sup>3</sup>Vijil &nbsp;&nbsp; <sup>&#42;</sup>Equal contribution
 
 </div>
 
